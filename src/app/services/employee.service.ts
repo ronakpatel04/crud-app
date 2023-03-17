@@ -1,20 +1,40 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, map } from 'rxjs';
 import { employee } from '../shared/employee.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeeService {
-
-  constructor(private http : HttpClient) { 
-
-
+  employees = new BehaviorSubject<employee[]>([]);
+  constructor(private http: HttpClient) {}
+  addEmployee(data: employee) {
+    return this.http
+      .post<employee>('http://localhost:3000/employee', data)
+      .pipe(
+        map((res) => {
+          this.employees.next([...this.employees.getValue(), res]);
+          return res;
+        })
+      );
   }
-  addEmployee(data:employee){
-    return this.http.post<employee >('http://localhost:3000/employee',data)
+  getEmployee() {
+    return this.http.get<employee[]>('http://localhost:3000/employee').pipe(
+      map((res) => {
+        this.employees.next(res);
+        return res;
+      })
+    );
   }
-  getEmployee(){
-    return this.http.get<employee []>('http://localhost:3000/employee');
+
+
+  deleteEmployee(id:number){
+        return this.http.delete<employee>(`http://localhost:3000/employee/${id}`).pipe(map((res)=>{
+          // console.log(res);
+          this.employees.next(this.employees.getValue().filter(e => e.id != id));
+
+         
+        }))
   }
 }
