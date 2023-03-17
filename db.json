@@ -1,0 +1,93 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employee": [
+    {
+      "firstName": "RONAK",
+      "lastName": "MANGROLIYA",
+      "email": "ronakpatel2378@gmail.com",
+      "dob": "2023-03-22T18:30:00.000Z",
+      "gender": "Male",
+      "education": "Diploma",
+      "company": "google",
+      "experience": 5,
+      "package": 23,
+      "id": 1
+    },
+    {
+      "firstName": "JAY",
+      "lastName": "MORADIYA",
+      "email": "jaypatel2378@gmail.com",
+      "dob": "2023-03-21T18:30:00.000Z",
+      "gender": "Male",
+      "education": "Intermediate",
+      "company": "google",
+      "experience": 5,
+      "package": 23,
+      "id": 2
+    },
+    {
+      "firstName": "KAJAL",
+      "lastName": "PARMAR",
+      "email": "kajal@gmail.com",
+      "dob": "2023-03-01T18:30:00.000Z",
+      "gender": "Female",
+      "education": "Diploma",
+      "company": "Microsoft",
+      "experience": 5,
+      "package": 25,
+      "id": 3
+    },
+    {
+      "firstName": "rohan",
+      "lastName": "patel",
+      "email": "rohan@gmail.conm",
+      "dob": "2023-03-14T18:30:00.000Z",
+      "gender": "Male",
+      "education": "Graduate",
+      "company": "2muchcoffe",
+      "experience": 10,
+      "package": 36,
+      "id": 4
+    },
+    {
+      "firstName": "raju",
+      "lastName": "patel",
+      "email": "raju@gmail.conm",
+      "dob": "2023-03-14T18:30:00.000Z",
+      "gender": "Male",
+      "education": "Post Graduate",
+      "company": "2muchcoffe",
+      "experience": 10,
+      "package": 36,
+      "id": 5
+    },
+    {
+      "firstName": "pintu",
+      "lastName": "singh",
+      "email": "pintu@gmail.conm",
+      "dob": "2023-03-14T18:30:00.000Z",
+      "gender": "Male",
+      "education": "Diploma",
+      "company": "amazom",
+      "experience": 2,
+      "package": 26,
+      "id": 6
+    }
+  ]
+}
