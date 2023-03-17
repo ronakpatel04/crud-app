@@ -28,13 +28,21 @@ export class EmployeeService {
     );
   }
 
-
-  deleteEmployee(id:number){
-        return this.http.delete<employee>(`http://localhost:3000/employee/${id}`).pipe(map((res)=>{
+  deleteEmployee(id: number) {
+    return this.http
+      .delete<employee>(`http://localhost:3000/employee/${id}`)
+      .pipe(
+        map((res) => {
           // console.log(res);
-          this.employees.next(this.employees.getValue().filter(e => e.id != id));
+          this.employees.next(
+            this.employees.getValue().filter((e) => e.id != id)
+          );
+        })
+      );
+  }
 
-         
-        }))
+
+  updateEmp(id:number, data:employee){
+    return this.http.put(`http://localhost:3000/employee/${id}`,data)
   }
 }
